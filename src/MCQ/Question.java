@@ -2,12 +2,16 @@ package MCQ;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.swing.*;  
 
 public class Question {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException{
 		JFrame f=new JFrame("MCQ");//creating instance of JFrame  
         
 		JButton b=new JButton("SUBMIT");//creating instance of JButton  
@@ -59,7 +63,7 @@ public class Question {
 		
 		b.addActionListener(new ActionListener()
 		{  
-			    public void actionPerformed(ActionEvent e)
+			    public void actionPerformed(ActionEvent e) 
 			    {  
 			    	String question = t1.getText();
 			    	
@@ -70,8 +74,26 @@ public class Question {
 			    	String optionC = t4.getText();
 			    	
 			    	String optionD = t5.getText();
-			    } 
-			    
+			    	
+			    	try {
+						Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+					} catch (ClassNotFoundException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+			    	
+			    	String url = "jdbc:sqlserver://agl78\\sqlexpress;user=sa;password=ATE186@agaramtech";
+
+			    	try {
+						Connection conn= DriverManager.getConnection(url);
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				
+
+
+			    } 			    
 		}
 		);  
 		  
