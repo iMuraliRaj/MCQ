@@ -13,10 +13,36 @@ public class Question {
 		JButton c=new JButton("CANCEL");//creating instance of JButton  
 		c.setBounds(200,150,100, 35);//x axis, y axis, width, height 
 		
+		JLabel l = new JLabel("Question");
+		l.setSize(200,50);
+		
+		f.add(l);
+		
+		
 		JTextField t1=new JTextField();  
-		t1.setBounds(30,10, 250,30);  
+		t1.setBounds(80,10, 250,30);  
 		
 		f.add(t1);
+		
+		JTextField t2=new JTextField();  
+		t2.setBounds(80,10, 250,30);  
+		
+		f.add(t2);
+		
+		JTextField t3=new JTextField();  
+		t3.setBounds(80,10, 250,30);  
+		
+		f.add(t3);
+		
+		JTextField t4=new JTextField();  
+		t4.setBounds(80,10, 250,30);  
+		f.add(t4);
+
+		
+		JTextField t5=new JTextField();  
+		t5.setBounds(80,10, 250,30);  
+
+		f.add(t5);
 		
 		f.add(c);
 		          
