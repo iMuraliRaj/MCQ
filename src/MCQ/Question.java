@@ -25,23 +25,23 @@ public class Question {
 		f.add(t1);
 		
 		JTextField t2=new JTextField();  
-		t2.setBounds(80,10, 250,30);  
+		t2.setBounds(80,50, 120,30);  
 		
 		f.add(t2);
 		
 		JTextField t3=new JTextField();  
-		t3.setBounds(80,10, 250,30);  
+		t3.setBounds(210,50, 120,30);  
 		
 		f.add(t3);
 		
 		JTextField t4=new JTextField();  
-		t4.setBounds(80,10, 250,30);  
+		t4.setBounds(80,90, 120,30);  
+		
 		f.add(t4);
-
 		
 		JTextField t5=new JTextField();  
-		t5.setBounds(80,10, 250,30);  
-
+		t5.setBounds(210,90, 120,30);  
+		
 		f.add(t5);
 		
 		f.add(c);
@@ -53,6 +53,17 @@ public class Question {
 		f.setVisible(true);//making the frame visible  
 		f.setResizable(false);
 		f.setLocationRelativeTo(null);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	}
 
