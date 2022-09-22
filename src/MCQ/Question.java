@@ -1,5 +1,8 @@
 package MCQ;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;  
 
 public class Question {
@@ -54,8 +57,24 @@ public class Question {
 		f.setResizable(false);
 		f.setLocationRelativeTo(null);
 		
-		
-		
+		b.addActionListener(new ActionListener()
+		{  
+			    public void actionPerformed(ActionEvent e)
+			    {  
+			    	String question = t1.getText();
+			    	
+			    	String optionA = t2.getText();
+			    	
+			    	String optionB = t3.getText();
+			    	
+			    	String optionC = t4.getText();
+			    	
+			    	String optionD = t5.getText();
+			    } 
+			    
+		}
+		);  
+		  
 		
 		
 		
