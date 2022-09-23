@@ -11,7 +11,17 @@ import javax.swing.*;
 
 public class Question {
 	
-	public static void main(String[] args) throws SQLException{
+	public static void main(String[] args) throws SQLException, ClassNotFoundException{
+		
+		
+		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+	
+		String url = "jdbc:sqlserver://agl78\\sqlexpress;databasename=mcq;user=sa;password=ATE186@agaramtech";
+
+		Connection conn= DriverManager.getConnection(url);
+		
+		Statement statement = conn.createStatement();
+		
 		JFrame f=new JFrame("MCQ");//creating instance of JFrame  
         
 		JButton b=new JButton("SUBMIT");//creating instance of JButton  
@@ -75,24 +85,18 @@ public class Question {
 			    	
 			    	String optionD = t5.getText();
 			    	
-			    	try {
-						Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-					} catch (ClassNotFoundException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
+			    	String query = "insert into questions values ((select count(*) from questions)+1,"+"\'"+question+"\'"+","+"\'"+optionA+"\'"+","+"\'"+optionB+"\'"+","+"\'"+optionC+"\'"+","+"\'"+optionD+"\')";
 			    	
-			    	String url = "jdbc:sqlserver://agl78\\sqlexpress;user=sa;password=ATE186@agaramtech";
-
-			    	try {
-						Connection conn= DriverManager.getConnection(url);
+			    	System.out.println(query);
+			    	
+					try {
+						statement.executeUpdate(query);
 					} catch (SQLException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-				
 
-
+			
 			    } 			    
 		}
 		);  
